@@ -14,3 +14,19 @@ The data used in this project is all publicly available and open source. British
 **98-401-X2021006_English_CSV_data_Britis...xlsx:** Raw 2021 Census Profile data for BC at the dissemination area level, downloaded from Statistics Canada. ~3.5GB — not included in repository due to size.
 
 **lda_000b21a_e/ 2021:** Cartographic Boundary File for dissemination areas, downloaded from Statistics Canada. Shapefile format, clipped to coastline.
+
+# Available Geographic Information
+
+Dissemination areas are the smallest standard geographic units for which Statistics Canada publishes census data. They are geographic areas containing 400-700 people, and Statistics Canada publishes aggregate statistics about individuals living in these areas. These include things such as income, immigration status, languages spoken and age. The basic assumption of this project is that we can use this information as a substitute for more specific information about the patients who visit these clinics. But there is also a benefit to using this data: we can find out information about people who live near mental health clinics even if they do not visit them. 
+
+The mental health clinic geographic data is used to pinpoint the location of mental health clinics in communities and compare their location to dissemination areas or DAs. I create a radius around DAs depending on their size, urban/suburban categorization, and shape, in order to find DAs that have less access than others. 
+
+# Broad Geographic Availability
+
+### Vulnerability Index
+| BC Province | Metro Vancouver |
+|-------------|-----------------|
+| ![BC Vulnerability](graphics/vuln_score_bc.png) | ![Vancouver Vulnerability](graphics/vuln_score_vancouver.png) |
+
+
+
