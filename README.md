@@ -1,5 +1,10 @@
-# bc_mental_health_clinics
-This is a projectl looking at publicily available mental health clinic data as well as 2021 census data to improve mental health clinic availability
+# BC Mental Health Clinic Access Analysis
+
+This project examines publicly available mental health clinic data alongside 2021 Census 
+demographics to identify gaps in mental health service accessibility across British Columbia. 
+My key findings involve the language availability gaps present in certain dissemination areas. 
+
+![BC Vulnerability](graphics/vuln_score_bc.png)
 
 # Data
 
@@ -21,7 +26,49 @@ Dissemination areas are the smallest standard geographic units for which Statist
 
 The mental health clinic geographic data is used to pinpoint the location of mental health clinics in communities and compare their location to dissemination areas or DAs. I create a radius around DAs depending on their size, urban/suburban categorization, and shape, in order to find DAs that have less access than others. 
 
-## Graphics
+# Methodology
+
+## Vulnerability Index
+
+The vulnerability index is a composite score designed to identify dissemination areas 
+whose populations are at elevated risk of requiring mental health services. It is constructed 
+from 16 census variables spanning socioeconomic status, demographics, housing, and social 
+isolation, each converted to a percentage of the DA population:
+
+- **Age:** Youth (15-24) and seniors (65+)
+- **Income:** Median after-tax income, low income prevalence (LIM-AT), shelter cost burden (>30% of income)
+- **Housing:** Unsuitable housing, major repairs needed, renting
+- **Employment:** Unemployment rate
+- **Education:** No high school diploma
+- **Social isolation:** Living alone, single parent families
+- **Identity:** Indigenous identity, visible minority, immigrants, non-official language speakers, recent movers
+
+Each variable is normalized to a 0-1 scale using min-max normalization and averaged equally 
+across all 16 variables, producing a score between 0 and 1. A higher score indicates greater 
+estimated need for mental health services. Equal weighting was chosen for transparency and 
+reproducibility, though future work could apply evidence-based weights.
+
+## Clinic Access Methodology
+Rather than using a fixed radius to measure clinic accessibility, this project assigns each 
+DA a variable search radius based on its urban/rural classification and physical size:
+
+| Classification | Base Radius |
+|---------------|-------------|
+| Large Urban (100,000+) | 10km |
+| Medium City (30,000-99,999) | 15km |
+| Small Town (1,000-29,999) | 20km + DA radius |
+| Rural | 40km + DA radius |
+
+The DA radius is calculated as the radius of a circle with equivalent area to the DA 
+(`√(area/π)`). This accounts for the fact that rural DAs can cover hundreds of square 
+kilometres, making centroid-based distance measurements unreliable. A minimum of 40km 
+is applied to all rural DAs regardless of size, reflecting realistic travel distances 
+to services in rural BC.
+
+For each DA, the number of clinics within its search radius is counted using a spatial 
+buffer join in GeoPandas projected to BC Albers (EPSG:3153) for accurate distance measurement.
+
+# Graphics
 
 ## Vulnerability Score
 
@@ -37,11 +84,38 @@ The mental health clinic geographic data is used to pinpoint the location of men
 
 ![BC Vulnerability](graphics/van_lang_gap.png)
 
+### Language Access Gap Methodology
+To identify communities underserved by language-matched mental health services, this analysis 
+cross-references 2021 Census mother tongue data with the languages offered by nearby clinics.
+
+For each of the 10 most common non-English languages in the clinic dataset — Punjabi, Mandarin, 
+Cantonese, Tagalog, Spanish, Korean, Vietnamese, Hindi, Arabic, and Farsi — DAs where more 
+than 15% of residents speak that language as their mother tongue are identified. The number 
+of nearby clinics offering that language is then counted within each DA's variable search radius.
+
+DAs are flagged as underserved when their clinic count for a given language falls below the 
+25th percentile of all DAs with a significant speaker population for that language. This 
+relative threshold accounts for the fact that urban areas have far more clinics overall — 
+a DA in Surrey with 13 Punjabi clinics nearby may still be underserved relative to its 
+large Punjabi-speaking population.
+
+Mother tongue was used rather than total language knowledge, as it is a stronger indicator 
+of preference for language-matched mental health services. Research consistently shows that 
+therapy delivered in a patient's first language produces significantly better outcomes.
+
 | White Rock | Langley |
 |-------------|-----------------|
 | ![BC Vulnerability](graphics/white_rock_mandarin.png) | ![Vancouver Vulnerability](graphics/langley_korean.png) |
+
+White Rock has a high population of Mandarin speakers with 0 clinics within 10km. Langley similarly has up to 18% Korean DAs with 0 clinics within 10km.
 
 
 | Prince George| Kelowna |
 |-------------|-----------------|
 | ![BC Vulnerability](graphics/prince_george_punjabi.png) | ![Vancouver Vulnerability](graphics/punjabi_kelowna.png) |
+
+Prince George and Kelowna have high populations of Punjabi speakers, yet they both seem to have 0 clinics within either 15km or 40km of a few DAs. These ranges were estimated based on urban/rural classification. 
+
+# Recommendation
+
+My recommendation is to investigate areas of oversaturation and possibly transfer practitioners to mental health clinics where they are needed. For example, Vancouver is a very well covered area of BC. There are many areas of the city where there is lots of access to clinics in a multitude of languages. I think some clinitions or translators should be moved to White Rock, or these areas should recieve an expansion in their multilanguage offerings.
