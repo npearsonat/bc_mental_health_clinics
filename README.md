@@ -82,7 +82,7 @@ You'll find that there is quite an even spread of areas with high vulernability 
 
 ![BC Vulnerability](graphics/bc_no_clinics.png)
 
-These are the DAs with high vulnerability score but do not have any nearby clinics. The calculation is based on how rural they are, as well as the size of the DA. You'll see in this map that many cities are very well covered, even with a reduced search radius of around 10km. The areas where mental health clinics are not in close proximity are up north in very sparsely populated regions of the country.
+These are the DAs with high vulnerability score but do not have any nearby clinics. The clinics are identified by a blue dot. The calculation is based on how rural they are, as well as the size of the DA. You'll see in this map that many cities are very well covered, even with a reduced search radius of around 10km. The areas where mental health clinics are not in close proximity are up north in very sparsely populated regions of the country.
 
 ## DAs With Gaps in Language Coverage
 
