@@ -114,7 +114,7 @@ therapy delivered in a patient's first language produces significantly better ou
 White Rock has a high population of Mandarin speakers with 0 clinics within 10km. Langley similarly has up to 18% Korean DAs with 0 clinics within 10km.
 
 
-| Prince George| Kelowna |
+| Prince George| Oliver and Osoyoos |
 |-------------|-----------------|
 | ![BC Vulnerability](graphics/prince_george_punjabi.png) | ![Vancouver Vulnerability](graphics/punjabi_kelowna.png) |
 
