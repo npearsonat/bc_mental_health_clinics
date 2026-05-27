@@ -31,7 +31,7 @@ The mental health clinic geographic data is used to pinpoint the location of men
 
 ## Highly Vulnerable DAs With Few Nearby Clinics
 
-[BC Vulnerability](graphics/bc_no_clinics  .png)
+![BC Vulnerability](graphics/bc_no_clinics  .png)
 
 ## DAs With Gaps in Language Coverage
 
