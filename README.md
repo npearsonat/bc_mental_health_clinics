@@ -21,12 +21,30 @@ Dissemination areas are the smallest standard geographic units for which Statist
 
 The mental health clinic geographic data is used to pinpoint the location of mental health clinics in communities and compare their location to dissemination areas or DAs. I create a radius around DAs depending on their size, urban/suburban categorization, and shape, in order to find DAs that have less access than others. 
 
-# Broad Geographic Availability
+## Graphics
 
-### Vulnerability Index
+## Vulnerability Score
+
 | BC Province | Metro Vancouver |
 |-------------|-----------------|
 | ![BC Vulnerability](graphics/vuln_score_bc.png) | ![Vancouver Vulnerability](graphics/vuln_score_vancouver.png) |
 
+## Highly Vulnerable DAs With Few Nearby Clinics
+
+|-------------|-----------------|
+| ![BC Vulnerability](graphics/bc_no_clinics  .png)
+
+## DAs With Gaps in Language Coverage
+
+| Vancouver | Metro Vancouver |
+|-------------|-----------------|
+| ![BC Vulnerability](graphics/van_lang_gap.png)
+
+| White Rock | Langley |
+|-------------|-----------------|
+| ![BC Vulnerability](graphics/white_rock_mandarin.png) | ![Vancouver Vulnerability](graphics/langley_korean.png) |
 
 
+| Prince George| Kelowna |
+|-------------|-----------------|
+| ![BC Vulnerability](graphics/prince_george_punjabi.png) | ![Vancouver Vulnerability](graphics/punjabi_kelowna.png) |
