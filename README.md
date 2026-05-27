@@ -76,9 +76,13 @@ buffer join in GeoPandas projected to BC Albers (EPSG:3153) for accurate distanc
 |-------------|-----------------|
 | ![BC Vulnerability](graphics/vuln_score_bc.png) | ![Vancouver Vulnerability](graphics/vuln_score_vancouver.png) |
 
+You'll find that there is quite an even spread of areas with high vulernability score all accross BC. They are not limited to areas of low income, nor do they subscribe to a particularlty strong geographic pattern. There are many high risk areas near downtown Vancouver, Richmond and Surrey. However, these areas are often very well covered compared to other areas of the Province. 
+
 ## Highly Vulnerable DAs With Few Nearby Clinics
 
 ![BC Vulnerability](graphics/bc_no_clinics.png)
+
+These are the DAs with high vulnerability score but do not have any nearby clinics. The calculation is based on how rural they are, as well as the size of the DA. You'll see in this map that many cities are very well covered, even with a reduced search radius of around 10km. The areas where mental health clinics are not in close proximity are up north in very sparsely populated regions of the country.
 
 ## DAs With Gaps in Language Coverage
 
