@@ -118,7 +118,7 @@ White Rock has a high population of Mandarin speakers with 0 clinics within 10km
 |-------------|-----------------|
 | ![BC Vulnerability](graphics/prince_george_punjabi.png) | ![Vancouver Vulnerability](graphics/punjabi_kelowna.png) |
 
-Prince George and Kelowna have high populations of Punjabi speakers, yet they both seem to have 0 clinics within either 15km or 40km of a few DAs. These ranges were estimated based on urban/rural classification. 
+Prince George and the Oliver and Osoyoos areas have high populations of Punjabi speakers, yet they both seem to have 0 clinics within either 15km or 40km of a few DAs. These ranges were estimated based on urban/rural classification. 
 
 # Recommendation
 
