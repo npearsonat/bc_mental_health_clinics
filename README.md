@@ -92,15 +92,15 @@ These are the DAs with high vulnerability score but do not have any nearby clini
 To identify communities underserved by language-matched mental health services, this analysis 
 cross-references 2021 Census mother tongue data with the languages offered by nearby clinics.
 
-For each of the 10 most common non-English languages in the clinic dataset — Punjabi, Mandarin, 
-Cantonese, Tagalog, Spanish, Korean, Vietnamese, Hindi, Arabic, and Farsi — DAs where more 
+For each of the 10 most common non-English languages in the clinic dataset (Punjabi, Mandarin, 
+Cantonese, Tagalog, Spanish, Korean, Vietnamese, Hindi, Arabic, and Farsi) DAs where more 
 than 15% of residents speak that language as their mother tongue are identified. The number 
 of nearby clinics offering that language is then counted within each DA's variable search radius.
 
 DAs are flagged as underserved when their clinic count for a given language falls below the 
 25th percentile of all DAs with a significant speaker population for that language. This 
-relative threshold accounts for the fact that urban areas have far more clinics overall — 
-a DA in Surrey with 13 Punjabi clinics nearby may still be underserved relative to its 
+relative threshold accounts for the fact that urban areas have far more clinics overall.
+A DA in Surrey with 13 Punjabi clinics nearby may still be underserved relative to its 
 large Punjabi-speaking population.
 
 Mother tongue was used rather than total language knowledge, as it is a stronger indicator 
